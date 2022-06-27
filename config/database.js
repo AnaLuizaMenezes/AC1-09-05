@@ -8,3 +8,4 @@ const conexao = async() => {
 }
 
 module.exports = conexao
+

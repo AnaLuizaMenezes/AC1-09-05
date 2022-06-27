@@ -68,7 +68,6 @@ module.exports = (app)=>{
                 } catch (error) {
                     
                 }
-               
                 //alterar o nome do arquivo na coleção gallery
                 var documento = await gallery.findOneAndUpdate(
                 {_id:req.query.id},
@@ -98,7 +97,7 @@ module.exports = (app)=>{
         try {
             fs.unlinkSync('uploads/'+req.body.anterior)
         } catch (error) {
-            return
+            //console.log(error)
         }
         //localizar e excluir a imagem
         var excluir = await gallery.findOneAndRemove({_id:id})
